@@ -18,7 +18,7 @@ export function routerBeforeEach(path: string): boolean {
 
 /**
  * 添加拦截器
- * 微信小程序端uni.switchTab拦截无效, 已在api中拦截
+ * 微信小程序端uni.switchTab拦截无效
  * 微信小程序原生tabbar请使用onShow
  * 微信小程序端 <navigator>拦截无效,请使用api
  * @param routerName

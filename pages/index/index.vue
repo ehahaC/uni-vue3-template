@@ -2,20 +2,20 @@
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title">{{title}}</text>
+			<text>当前状态: {{ authStore.isLogin ? "已登录" : "未登录" }}</text>
 		</view>
-		
-		<button @click="handleClick">go about</button>
+		<button type="warn" @click="handleClick">登录后可查看页面</button>
 	</view>
 </template>
 
 <script setup>
 	import { ref } from "vue"
-	const title = ref('hello');
+	import { useAuthStore } from "@/store/auth";
+	const authStore = useAuthStore()
 	
 	function handleClick(){
 		uni.redirectTo({
-			url: "/pages/about/index"
+			url: "/pages/need-auth/index"
 		})
 	}
 </script>

@@ -24,7 +24,7 @@ const request = createRequest();
  */
 request.interceptors.request.use(
     (options) => {
-        if (options.meta?.auth) {
+        if (options.custom?.auth) {
             const authStore = useAuthStore();
             if (!authStore.isLogin) {
 				uni.showToast({

@@ -7,30 +7,56 @@
 			}
 		},
 		{
-            "path" : "pages/about/index",
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false
+			},
+			"meta": {
+				"ignoreAuth": true
+			}
+		},
+		{
+            "path" : "pages/profile/index",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "about",
+                "navigationBarTitleText": "我",
                 "enablePullDownRefresh": false
-            },
-			"meta":{
-				"ignoreAuth": false
-			}
+            }
             
         },
 		{
-            "path" : "pages/login/index",
+            "path" : "pages/need-auth/index",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "登录",
+                "navigationBarTitleText": "鉴权测试页",
                 "enablePullDownRefresh": false
             },
-			"meta":{
-				"ignoreAuth": true
+			"meta": {
+				"ignoreAuth": false
 			}
             
         }
     ],
+	"tabBar": {
+		"color": "#474747",
+		"selectedColor": "#9BC6FC",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/tabBar/home.png",
+				"selectedIconPath": "static/images/tabBar/selectedHome.png"
+			},
+			{
+				"pagePath": "pages/profile/index",
+				"text": "我",
+				"iconPath": "static/images/tabBar/profile.png",
+				"selectedIconPath": "static/images/tabBar/selectedProfile.png"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
