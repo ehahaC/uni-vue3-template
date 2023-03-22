@@ -1,9 +1,16 @@
-import type { IConfig } from "./configuration.ts"
-import devConfig from "./config.development"
-import prodConfig from "./config.production"
+import type { IConfig } from "./configuration.ts";
+// import dev from "./config.development";
+// import prod from "./config.production";
+// const dev = require("./config.development")
+// require("./config.production")
+// console.log(require("./config.development"));
+import configMap from "./config"
 let envConfig: IConfig = {};
 try {
-	envConfig = process.env.NODE_ENV === "development" ? devConfig : prodConfig;
+	// require(`./config.${process.env.NODE_ENV}`).default
+	envConfig = require(`./config.${process.env.NODE_ENV}`).default;
+	console.log(require(`./config.${process.env.NODE_ENV}`));
+	console.log(configMap.get(process.env.NODE_ENV));
 } catch (e) {
 	console.error(e);
 }

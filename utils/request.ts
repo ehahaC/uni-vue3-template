@@ -1,9 +1,8 @@
 import Request from '@/uni_modules/luch-request/luch-request';
-import env from "@/config";
 import { useAuthStore } from '@/store/auth';
 import { ResultEnum } from '@/enums/httpEnum';
 
-const BASE_URL = env.baseUrl;
+const BASE_URL = process.env.VUE_APP_BASE_URL;
 const HEADER = {
     'Content-Type': 'application/json;charset=UTF-8;',
     Accept: 'application/json, text/plain, */*',
